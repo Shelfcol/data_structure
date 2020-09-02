@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1599048146 source:f:\users\gxf\desktop\data_structure\hftree\main.cpp
+	<iostream>
+	"hfTree.h"
+
+1599046409 f:\users\gxf\desktop\data_structure\hftree\hftree.h
+	<iostream>
+	<string>
+

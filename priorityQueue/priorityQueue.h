@@ -14,7 +14,7 @@ private:
     void doubleSpace();
     void buildHeap();
     void percolate(int hole);//向下过滤的函数
-    void printQueue();//遍历显示堆元素
+
 public:
     priorityQueue(int capacity=100)//根据容易先建一个空堆
     {
@@ -35,7 +35,7 @@ public:
     void enQueue(int x);//入队
     int deQueue();//出堆
     int getHead(){return array[1];}
-
+    void printQueue();//遍历显示堆元素
 
 };
 #endif // PRIOITYQUEUE_H

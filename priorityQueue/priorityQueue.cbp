@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="priorityQueue.cpp" />
+		<Unit filename="priorityQueue.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

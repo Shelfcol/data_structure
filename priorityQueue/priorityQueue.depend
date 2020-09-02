@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1599036055 source:f:\users\gxf\desktop\data_structure\priorityqueue\main.cpp
+	<iostream>
+	"priorityQueue.h"
+
+1599036082 f:\users\gxf\desktop\data_structure\priorityqueue\priorityqueue.h
+	<iostream>
+
+1599037944 source:f:\users\gxf\desktop\data_structure\priorityqueue\priorityqueue.cpp
+	"priorityQueue.h"
+

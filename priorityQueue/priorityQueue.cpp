@@ -16,15 +16,25 @@ void priorityQueue::enQueue(int x)
 //生成一个最小堆
 //首先将所有的数据放到堆里面
 //然后再从最大的有儿子的节点开始，percolate
-void priorityQueue::priorityQueue(int data[],int size)
+ priorityQueue::priorityQueue(int data[],int size)
 {
     array=new int [size+10];
+    array[0]=-10000;
     for(int i=0;i<size;++i)
         array[i+1]=data[i];
     currentSize=size;
+    //cout<<"currentSize="<<currentSize<<endl;
     for(int i=currentSize/2;i>0;--i)
+    {
+        //cout<<"array["<<i<<"]="<<array[i]<<endl;
+        //cout<<"percolate before:"<<endl;
+        //printQueue();
         percolate(i);
+        //cout<<"percolate after:"<<endl;
+        //printQueue();
+        //cout<<endl;
 
+    }
 }
 
 //出堆
@@ -45,7 +55,7 @@ void priorityQueue::percolate(int hole)
 {
     int child;
     int item=array[hole];//将开始的值保存下来
-    for(;2*hole <currentSize+1;hole=child)
+    for(;2*hole <=currentSize;hole=child)
     {
         child=2*hole;
         //找出儿子中的最小值
@@ -53,16 +63,17 @@ void priorityQueue::percolate(int hole)
             ++child;
         if(array[child]<item)//item比最小的儿子还小，则最小的儿子上浮一个位置，然后hole变到最小儿子的位置
             array[hole]=array[child];
+        else//！！！！这步至关重要，因为儿子节点肯定已经满足最小堆的定义，所以只要某一步不需要调整，则整个堆都不需要调整，就需要结束percolate
+            break;
     }
     array[hole]=item;
 
 }
 void priorityQueue::printQueue()
 {
-    cout<<"print the heap"<<endl;
     for(int i=1;i<currentSize+1;++i)
         cout<<array[i]<<" ";
-    cout<<"heap printing over";
+    cout<<endl;
 }
 void priorityQueue::doubleSpace()
 {
